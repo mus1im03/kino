@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../Body_film_page/filmBody.module.css";
 import img from "../assets/img/Warrior_Poster.jpg";
 import YoutubePlayer from "./youtube";
+import { AiOutlineLike } from "react-icons/ai";
+import { AiOutlineDislike } from "react-icons/ai";
 const FilmBody = () => {
   return (
     <main className={styles.osnova}>
@@ -60,7 +62,17 @@ const FilmBody = () => {
         </div>
       </div>
       <div className={styles.player}>
-       <YoutubePlayer/>
+        <YoutubePlayer />
+      </div>
+      <div className={styles.ocenka}>
+        <button className={styles.like}>
+          <AiOutlineLike />
+          10
+        </button>
+        <span className={styles.reiting}>8.3 Оценка</span>
+        <button className={styles.dislike}>
+          <AiOutlineDislike />2
+        </button>
       </div>
     </main>
   );

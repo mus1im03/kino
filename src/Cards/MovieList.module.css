@@ -1,0 +1,15 @@
+.img{
+   
+    width: 180px;
+    height: 270px;
+    background-image:  url('https://img.freepik.com/free-photo/a-painting-of-a-mountain-lake-with-a-mountain-in-the-background_188544-9126.jpg?size=626&ext=jpg');
+    display: flex;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.cards{
+    display: flex;
+    gap: 30px;
+   
+}

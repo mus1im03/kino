@@ -8,6 +8,7 @@ import icon from "../assets/img/icons8-человек-64.png";
 import { fetchGenres } from "../features/genreSlice";
 
 const Header = () => {
+
   const dispatch = useDispatch();
 
   const genres = useSelector((state) => state.genres.genres);
@@ -22,10 +23,23 @@ const Header = () => {
     dispatch(fetchGenres());
   }, [dispatch]);
 
+  const headerBlockStyle = {
+    backgroundColor: seeGenres ? '#242131' : 'transparent',
+    borderTopLeftRadius: seeGenres && '15px',
+    borderTopRightRadius: seeGenres && '15px',
+    padding: seeGenres && '0 10px 0 10px'
+  };
+
+  const headerBlockStyl = {
+    backgroundColor: seeGenres ? '#242131' : 'transparent',
+    borderBottomLeftRadius: seeGenres && '15px',
+    borderBottomRightRadius: seeGenres && '15px',
+  };
+
   return (
     <header>
-      <div className={styles.header_block}>
-        <div className={styles.img_block}>
+      <div className={styles.header_block} style={headerBlockStyle}>
+        <div className={styles.img_block} onMouseLeave={() => setSeeGenres(false)}>
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
@@ -34,7 +48,7 @@ const Header = () => {
           <li href="" className="nav">
             Главная
           </li>
-          <li className="nav" onMouseEnter={() => handleGenres()}>
+          <li className="nav genres" onMouseEnter={() => handleGenres()}>
             Жанры
           </li>
           <li href="" className="nav">
@@ -57,12 +71,13 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <div>
-        {seeGenres &&
-          <div>{genres.map(genre => {
-            return <li className={styles.genres_block}>{genre.title}</li>;
-          })}</div>}
-      </div>
+      {seeGenres && (
+        <div className={styles.film_category} style={headerBlockStyl} onMouseLeave={() => setSeeGenres(false)}><span>Жанры</span>
+          <div className={styles.genres_block}>{genres.map((genre) => {
+            return <Link to={`/genre/${genre._id}`} className={styles.genres_names}>{genre.title}</Link>;
+          })}</div>
+        </div>
+      )}
     </header>
   );
 };

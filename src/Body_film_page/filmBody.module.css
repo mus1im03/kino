@@ -86,3 +86,8 @@
   align-items: center;
   display: flex;
 }
+
+.filmComment{
+  display: flex;
+  justify-content: center;
+}

@@ -1,4 +1,5 @@
-import YouTube from 'react-youtube';
+import React from "react";
+import YouTube from "react-youtube";
 
 const YoutubePlayer = () => {
   const onPlayerReady = (event) => {
@@ -7,8 +8,8 @@ const YoutubePlayer = () => {
   };
 
   const opts = {
-    height: '390',
-    width: '640',
+    height: "390",
+    width: "640",
     playerVars: {
       // https://youtu.be/VkM87pog_gM?si=Lx2joax5s_STAx33
       autoplay: 1,

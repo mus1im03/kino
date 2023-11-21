@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from './Header/Header';
 import "../src/App.css";
-import '../src/App.css'
 import MainContent from "./MainContent/MainContent";
 import MovieList from "./Cards/MovieList";
 
@@ -24,6 +23,7 @@ const App = () => {
         <Route path="/genre/:genreId" element={<MovieList />} />
       </Routes>
     </>
+
   );
 };
 

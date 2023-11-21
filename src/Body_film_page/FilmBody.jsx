@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../Body_film_page/filmBody.module.css";
 import img from "../assets/img/Warrior_Poster.jpg";
 import YoutubePlayer from "./youtube";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
-const FilmBody = () => {
+import FilmBody_Comment from "./FilmBody_comment";
+
+function FilmBody({comment}) {
   return (
     <main className={styles.osnova}>
       <div className={styles.oblojka}>
@@ -74,8 +76,11 @@ const FilmBody = () => {
           <AiOutlineDislike />2
         </button>
       </div>
+      <div className={styles.filmComment}>
+      <FilmBody_Comment text={comment}/>
+      </div>
     </main>
   );
-};
+}
 
 export default FilmBody;

@@ -1,0 +1,88 @@
+.perviyBlock {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.opisanie {
+  width: 50%;
+  margin-left: 40px;
+  color: white;
+  word-spacing: 5px;
+
+}
+
+.img {
+  margin-left: -155px;
+}
+
+.vtoroyBlock {
+  display: flex;
+  justify-content: center;
+}
+
+.params {
+  margin-left: -147px;
+  color: white;
+  word-spacing: 5px;
+}
+
+.params2 {
+  width: 50%;
+  margin-left: 40px;
+}
+
+.text {
+  width: 40%;
+  margin-left: -10px;
+  position: absolute;
+  top: 500px;
+  font-size: 18px;
+  color: white;
+  word-spacing: 5px;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.ocenka {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.ocenka button {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.ocenka span {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  border: 1px solid black;
+  font-size: 19px;
+  background-color: gray;
+}
+
+.like {
+  border: 1px solid green;
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.dislike {
+  border: 1px solid red;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.reiting {
+  text-align: center;
+  font-size: 18px;
+  align-items: center;
+  display: flex;
+}

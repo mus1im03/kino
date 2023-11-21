@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+header {
+    width: 100%;
+    font-family: 'League Gothic', sans-serif;
+}
+
+.header_block {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_block {
+    margin-right: -100px;
+}
+
+.img_block img {
+    height: 70px;
+    width: 160px;
+}
+
+.categories {
+    list-style: none;
+    display: flex;
+}

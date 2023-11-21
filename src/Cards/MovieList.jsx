@@ -12,7 +12,7 @@ const MovieList = () => {
       {films.map((film, i) => {
         return (
           <MovieCard
-           key={i}
+           key={film._id}
            img={film.image}
            title={film.title}
            year={film.year}

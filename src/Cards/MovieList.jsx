@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-
-import MovieCard from "./MovieCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilms } from "../features/filmSlice";
 import styles from "../Cards/MovieList.module.css";
@@ -17,7 +15,7 @@ const MovieList = () => {
       {films.map((film) => {
         return (
           <div className={styles.img}>
-            <p>{film.name}</p>
+            <p className={styles.text}>{film.name}</p>
             <p>{film.years}</p>
           </div>
         );

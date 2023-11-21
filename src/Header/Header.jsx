@@ -27,7 +27,6 @@ const Header = () => {
     backgroundColor: seeGenres ? '#242131' : 'transparent',
     borderTopLeftRadius: seeGenres && '15px',
     borderTopRightRadius: seeGenres && '15px',
-    padding: seeGenres && '0 10px 0 10px'
   };
 
   const headerBlockStyl = {

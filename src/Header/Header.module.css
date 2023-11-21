@@ -10,7 +10,7 @@ header {
 
 .header_block {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -82,9 +82,9 @@ header {
 }
 
 .film_category {
-  width: 1170px;
-  min-height: 71px;
-  padding: 19px 20px 10px 26px;
+  width: 1169px;
+    min-height: 71px;
+    padding: 19px 0px 10px 47px;
 }
 
 .film_category span {

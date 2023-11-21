@@ -1,0 +1,48 @@
+
+
+.perviyBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.opisanie {
+    width: 50%;
+    margin-left: 40px;
+   
+}
+
+.img{
+    margin-left: -155px;
+}
+
+.vtoroyBlock{
+    display: flex;
+    justify-content: center;
+}
+
+.params{
+    margin-left: -147px;
+ 
+}
+
+.params2{
+    
+    width: 50%;
+    margin-left: 40px;
+}
+
+.text{
+    width: 40%;
+    margin-left: -10px;
+    position: absolute;
+    top: 500px;
+    font-size: 18px;
+
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}

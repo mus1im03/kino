@@ -12,12 +12,12 @@ const App = () => {
     <>
       <div>
         <Header/>
-        <MainContent />
+        
       </div>
 
       {/* Роуты тут */}
       <Routes>
-      {/* <Route path="/" element={<MainContent />} /> */}
+        <Route path="/" element={<MainContent />}/>
         <Route path="/genre/:genreId" element={<MovieList />} />
       </Routes>
     </>

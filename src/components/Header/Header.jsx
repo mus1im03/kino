@@ -33,6 +33,7 @@ const Header = () => {
     backgroundColor: seeGenres ? '#242131' : 'transparent',
     borderBottomLeftRadius: seeGenres && '15px',
     borderBottomRightRadius: seeGenres && '15px',
+    transition: seeGenres && 'backgroundColor 0.2s ease'
   };
 
   return (
@@ -44,9 +45,9 @@ const Header = () => {
           </Link>
         </div>
         <ul className={styles.categories}>
-          <li href="" className="nav">
+          <Link to='/' className="nav first">
             Главная
-          </li>
+          </Link>
           <li className="nav genres" onMouseEnter={() => handleGenres()}>
             Жанры
           </li>

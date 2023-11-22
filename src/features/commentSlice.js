@@ -24,7 +24,7 @@ export const fetchComment = createAsyncThunk(
     "addComment/comment",
     async (text, thunkAPI) => {      
       try {
-        const res = await fetch(`http://localhost:4050/category`, {
+        const res = await fetch(`http://localhost:4050/comments`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -57,7 +57,6 @@ export const fetchComment = createAsyncThunk(
       })
       .addCase(addComment.fulfilled, (state, action) => {
         state.comment.push(action.payload);
-        state.loading = false;
       })
     },
 })

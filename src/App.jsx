@@ -14,7 +14,7 @@ const App = () => {
     <>
       <div>
         <Header />
-        {/* <MainContent /> */}
+        <MainContent />
       </div>
 
       {/* Роуты тут */}

@@ -4,7 +4,7 @@ import img from "../assets/img/Warrior_Poster.jpg";
 import YoutubePlayer from "./youtube";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
-import FilmBody_Comment from "./FilmBody_comment";
+import FilmBody_Comment from "./FilmBodyComment";
 
 function FilmBody({comment}) {
   return (
@@ -64,7 +64,7 @@ function FilmBody({comment}) {
         </div>
       </div>
       <div className={styles.player}>
-        <YoutubePlayer />
+        {/* <YoutubePlayer /> */}
       </div>
       <div className={styles.ocenka}>
         <button className={styles.like}>

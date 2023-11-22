@@ -62,6 +62,7 @@ const Header = () => {
         </ul>
         <div className={styles.input_block}>
           <input type="text" id="" placeholder="Введите название" />
+          <button className={styles.input_btn}></button>
         </div>
         <div className={styles.login_button}>
           <button className={styles.login_button}>

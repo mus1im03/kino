@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../Body_film_page/filmBody.module.css";
-import img from "../assets/img/Warrior_Poster.jpg";
+import img from "../../assets/img/Warrior_Poster.jpg";
 import YoutubePlayer from "./youtube";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";

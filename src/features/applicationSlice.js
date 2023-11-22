@@ -32,9 +32,9 @@ export const authSignUp = createAsyncThunk(
 
       const json = await res.json()
 
-      if(json.error) {
-        return thunkAPI.rejectWithValue(json.error)
-      }
+      // if(json.error) {
+      //   return thunkAPI.rejectWithValue(json.error)
+      // }
 
       return json
     } catch (error) {

@@ -8,7 +8,7 @@ export const fetchComment = createAsyncThunk(
   "fetch/comment",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:4050/comments`, {
+      const res = await fetch('http://localhost:4050/comments', {
         method: "GET",
       });
       const comment = await res.json();
@@ -22,7 +22,6 @@ export const fetchComment = createAsyncThunk(
 export const addComment = createAsyncThunk(
   "addComment/comment",
   async (text, thunkAPI) => {
-    console.log(text, "action");
     try {
       const res = await fetch(`http://localhost:4050/comments`, {
         method: "POST",
@@ -32,37 +31,11 @@ export const addComment = createAsyncThunk(
         body: JSON.stringify({ text }),
       });
 
-
-  export const addComment = createAsyncThunk(
-    "addComment/comment",
-    async (text, thunkAPI) => {      
-      try {
-        const res = await fetch(`http://localhost:4050/comments`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ text }),
-        });
-        
-  
-        if (!res.ok) {
-          return thunkAPI.rejectWithValue("error");
-        }
-  
-        const addComment = await res.json();
-              
-        return addComment;
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error.message);
-
       if (!res.ok) {
         return thunkAPI.rejectWithValue("error");
-
       }
 
-      const addComment = await res.json();
-      console.log(addComment, "result");
+      const adComment = await res.json();
       return addComment;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -81,14 +54,8 @@ const commentSlice = createSlice({
       })
       .addCase(addComment.fulfilled, (state, action) => {
         state.comment.push(action.payload);
-
-      })
-    },
-})
-
       });
   },
 });
-
 
 export default commentSlice.reducer;

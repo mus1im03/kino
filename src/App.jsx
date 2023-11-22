@@ -1,11 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Header from './Header/Header';
 import "../src/App.css";
-import MainContent from "./MainContent/MainContent";
-import MovieList from "./Cards/MovieList";
-
-
+import Header from "./components/Header/Header";
+import MainContent from "./components/MainContent/MainContent";
+import MovieList from "./components/Cards/MovieList";
 
 
 const App = () => {
@@ -13,7 +11,7 @@ const App = () => {
 
     <>
       <div>
-        <Header />
+        <Header/>
         <MainContent />
       </div>
 

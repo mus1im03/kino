@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilms } from "../../features/filmSlice";
 import styles from "./MovieList.module.css";
-import { useParams } from "react-router-dom";
 
 const MovieList = () => {
 
@@ -14,9 +14,11 @@ const MovieList = () => {
     state.films.films.filter((film) => {
       if (!genreId) return true;
 
-      return film.genreId === genreId;
+      return film.genreId.includes(genreId);
     })
   );
+
+  console.log('FIIILMS', films);
 
   useEffect(() => {
     dispatch(fetchFilms());

@@ -10,14 +10,22 @@ const App = () => {
   return (
     <>
       <div>
+
+        
+
         <Header />
         <FilmBody />
         {/* <MainContent /> */}
+
       </div>
 
       {/* Роуты тут */}
       <Routes>
+
+        <Route path="/" element={<MainContent />}/>
+
         <Route path="/" element={<MainContent />} />
+
         <Route path="/genre/:genreId" element={<MovieList />} />
       </Routes>
     </>

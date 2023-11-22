@@ -1,29 +1,36 @@
 .cards {
   display: flex;
-  width: 1200px;
+  width: 1240px;
   margin: 0 auto;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 56px;
 }
 
 .film_info {
-  width: 153.143px;
-  padding-right: 24px;
-  height: 270px;
+  margin-top: -8px;
+  width: 100px;
   display: flex;
-  color: white;
-  margin-top: 30px;
-  margin-left: 40px;
-  border-radius: 5px;
+  color: #d9d7e0;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .card {
   display: flex;
   flex-direction: column;
+  margin-right: 24px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .card img {
   width: 153.143px;
-  padding-right: 24px;
+  border-radius: 11px;
+  height: 220px;
 }

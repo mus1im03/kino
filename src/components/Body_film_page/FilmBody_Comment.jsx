@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addComment } from "../features/commentSlice";
+import { addComment } from "../../features/commentSlice";
 import { useState } from "react";
 import styles from "./Comment.module.css";
 

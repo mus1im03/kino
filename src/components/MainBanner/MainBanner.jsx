@@ -11,6 +11,7 @@ import slide3title from "../../assets/img/slide3title.png";
 const MainBanner = () => {
   const flickityOptions = {
     initialIndex: 2,
+    wrapAround: true,
   };
 
   const films = {

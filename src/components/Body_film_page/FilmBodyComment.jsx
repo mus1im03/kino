@@ -64,7 +64,7 @@ const FilmBodyComment = () => {
         </div>
         <div className={styles.comment_text}>
           {comments.map((comment) => {
-            return <div key={comment}>{comment.text}</div>;
+            return <div key={comment._id}>{comment.text}</div>;
           })}
         </div>
       </div>

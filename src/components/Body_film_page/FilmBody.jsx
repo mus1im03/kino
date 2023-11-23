@@ -19,6 +19,7 @@ function FilmBody({ comment }) {
 
 console.log(selectedFilm)
   useEffect(() => {
+    window.scroll(0,0)
     dispatch(fetchFilms());
   }, [dispatch]);
 

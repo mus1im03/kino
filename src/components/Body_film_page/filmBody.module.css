@@ -14,6 +14,13 @@
 
 .img {
   margin-left: -155px;
+  width: 300px;
+  height: 444px;
+}
+
+.img img{
+  width: 300px;
+  height: 444px;
 }
 
 .vtoroyBlock {

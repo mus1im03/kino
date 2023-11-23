@@ -13,6 +13,7 @@
 
 
 .commentBtn{
+    margin-top: 5px;
     display: inline-block;
     text-align: center;
     padding: 0 40px;
@@ -28,8 +29,12 @@
     font-weight: 600;
 }
 
-.commet_text{
+.comment_text{
+    margin-top: 20px;
+    font-size: 20px;
     color: white;
+    position: absolute;
+    left: 720px;
 }
 
 .blurtext{
@@ -41,6 +46,8 @@
 #input{
     width: 275px;
     height: 15vh;
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 .divBtn{
@@ -50,4 +57,11 @@
 
 .textarea{
     width: 300px;
+}
+
+.form_comment form{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+    flex-direction: column
 }

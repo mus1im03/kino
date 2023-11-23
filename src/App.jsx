@@ -14,7 +14,7 @@ const App = () => {
         {/* <MainContent /> */}
       </div>
 
-      {/* Роуты тут */}
+    
       {/* <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="/genre/:genreId" element={<MovieList />} />

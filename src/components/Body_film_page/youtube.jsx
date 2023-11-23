@@ -1,7 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
 
-const YoutubePlayer = () => {
+const YoutubePlayer = ({ video }) => {
   const onPlayerReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
@@ -16,7 +16,7 @@ const YoutubePlayer = () => {
     },
   };
 
-  return <YouTube videoId="VkM87pog_gM" opts={opts} onReady={onPlayerReady} />;
+  return <YouTube videoId={video} opts={opts} onReady={onPlayerReady} />;
 };
 
 export default YoutubePlayer;

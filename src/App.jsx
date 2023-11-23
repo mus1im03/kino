@@ -9,17 +9,13 @@ import FilmBody from '../src/components/Body_film_page/FilmBody'
 const App = () => {
 
   return (
-
     <>
       <div>
         <Header />
       </div>
       {/* Роуты тут */}
-
+      
       <Routes>
-    
-      {/* <Routes>
-
         <Route path="/" element={<MainContent />} />
         <Route path="/genre/:genreId" element={<MovieList />} />
           <Route exact path="/movies" element={<MovieList />} />

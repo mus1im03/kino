@@ -12,7 +12,7 @@ const YoutubePlayer = ({ video }) => {
     width: "640",
     playerVars: {
       // https://youtu.be/VkM87pog_gM?si=Lx2joax5s_STAx33
-      autoplay: 1,
+      autoplay: 0,
     },
   };
 

@@ -71,6 +71,7 @@ const FilmBodyComment = () => {
                 <div className={styles.comment_text}>{comment.text}</div>
               </div>
             );
+//             return <div key={comment._id}>{comment.text}</div>;
           })}
         </div>
       </div>

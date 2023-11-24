@@ -2,7 +2,7 @@
 
 header {
   width: 1216px;
-  height: 72px;
+  /* height: 100px; */
   font-family: "League Gothic", sans-serif;
   margin: 0 auto;
   font-size: 15px;
@@ -15,7 +15,7 @@ header {
 }
 
 .img_block {
-  margin-right: -100px;
+  margin-right: -80px;
 }
 
 .img_block img {
@@ -95,6 +95,7 @@ header {
   min-height: 71px;
   padding: 19px 0px 10px 47px;
   position: absolute;
+  z-index: 10;
 }
 
 .film_category span {

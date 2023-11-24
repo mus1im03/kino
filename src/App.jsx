@@ -22,7 +22,7 @@ const App = () => {
         <Route exact path="/movies" element={<MovieList />} />
         <Route path="/movies/:id" element={<FilmBody />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

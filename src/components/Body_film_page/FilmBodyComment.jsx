@@ -15,7 +15,7 @@ const FilmBodyComment = () => {
 
   const handleAddComment = (e) => {
     e.preventDefault();
-    dispatch(addComment(text));
+    dispatch(addComment({ film, text }));
     setText("");
   };
 
@@ -39,7 +39,9 @@ const FilmBodyComment = () => {
     <div className={styles.comment_main}>
       <div className={styles.allComment}>
         <div className={styles.allInput}>
-          {blur && <>Поле не должно быть пустым</>}
+          {blur && (
+            <div className={styles.blur}>Поле не должно быть пустым</div>
+          )}
           <div className={styles.form_comment}>
             <form action="" onSubmit={handleAddComment}>
               <input
@@ -62,9 +64,14 @@ const FilmBodyComment = () => {
             </form>
           </div>
         </div>
-        <div className={styles.comment_text}>
+        <div>
           {comments.map((comment) => {
-            return <div key={comment._id}>{comment.text}</div>;
+            return (
+              <div key={comment}>
+                <div className={styles.comment_text}>{comment.text}</div>
+              </div>
+            );
+//             return <div key={comment._id}>{comment.text}</div>;
           })}
         </div>
       </div>

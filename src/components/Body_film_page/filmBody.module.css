@@ -73,13 +73,14 @@ main {
   height: 80px;
   border-radius: 40px;
   border: 1px solid black;
-  font-size: 19px;
-  background-color: gray;
+  font-size: 12px;
+  background-color: #423280;
+  color: #fff;
 }
 
 .like {
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 18px;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -87,8 +88,6 @@ main {
   border: 0;
   vertical-align: middle;
   text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
   color: white;
   background-color: #423280;
 }
@@ -102,11 +101,11 @@ main {
   background-color: #423280;
   border: none;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .dislike:active {
-  background-color: white;
+  background-color: #242131;
 }
 
 .reiting {

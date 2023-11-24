@@ -94,8 +94,9 @@ console.log(selectedFilm)
               {likes}
             </button>
             <span className={styles.reiting}>{selectedFilm.grade}</span>
-            <button className={styles.dislike}>
-              <AiOutlineDislike />2
+            <button onClick={handleDislike} className={styles.dislike}>
+              <AiOutlineDislike />
+              {dislikes}
             </button>
           </div>
           <div className={styles.filmComment}>

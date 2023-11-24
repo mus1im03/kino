@@ -63,7 +63,7 @@ console.log(selectedFilm)
               <AiOutlineLike />
               10
             </button>
-            <span className={styles.reiting}>{selectedFilm.grade} Оценка</span>
+            <span className={styles.reiting}>{selectedFilm.grade}</span>
             <button className={styles.dislike}>
               <AiOutlineDislike />2
             </button>

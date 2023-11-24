@@ -4,10 +4,10 @@ import img from "../../assets/img/Warrior_Poster.jpg";
 import YoutubePlayer from "./youtube";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
-import FilmBody_Comment from "./FilmBodyComment";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilms } from "../../features/filmSlice";
+import FilmBodyComment from "./FilmBodyComment";
 
 function FilmBody({ comment }) {
 
@@ -100,7 +100,7 @@ console.log(selectedFilm)
             </button>
           </div>
           <div className={styles.filmComment}>
-            <FilmBody_Comment text={comment} />
+            <FilmBodyComment id={id} text={comment} />
           </div>
     </main>
   );

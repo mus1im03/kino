@@ -2,7 +2,6 @@
   display: flex;
   width: 1240px;
   margin: 0 auto;
-  /* height: 300px; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12,6 +11,15 @@
   margin-top: 50px;
   border-bottom: 1px solid grey;
 }
+
+.full_card {
+  position: relative;
+}
+
+/* .full_card:hover {
+  opacity: 0.3;
+} */
+
 
 .film_info {
   margin-top: -8px;
@@ -31,12 +39,53 @@
   margin-bottom: 30px;
 }
 
-.card img {
+.card_image {
   width: 153.143px;
   border-radius: 11px;
   height: 220px;
 }
 
+.card_image:hover {
+  height: 230px;
+  opacity: 0.2;
+}
+
+/* .card img:hover {
+  height: 230px;
+  transition-duration: 0.2s;
+} */
+
 .link {
   text-decoration: none;
+}
+
+.info_card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 123px;
+  left: 22px;
+  color: #d9d7e0;
+}
+
+.card_grade {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info_sec_block {
+  font-size: 14px;
+}
+
+.card_years {
+  margin-right: 5px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: -96px;
+  left: 98px;
 }

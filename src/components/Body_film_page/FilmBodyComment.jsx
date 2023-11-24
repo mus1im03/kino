@@ -3,19 +3,18 @@ import { addComment } from "../../features/commentSlice";
 import { fetchComment } from "../../features/commentSlice";
 import { useEffect, useState } from "react";
 import styles from "./Comment.module.css";
+import { useParams } from "react-router-dom";
 
-const FilmBodyComment = () => {
+const FilmBodyComment = ({ id }) => {
   const [text, setText] = useState("");
-
   const [blur, setBlur] = useState(false);
-
-  const comments = useSelector((state) => state.comment.comment);
-
+  const comments = useSelector((state) => state.comment.comment.filter(comment => comment.filmId === id));
+  
   const dispatch = useDispatch();
 
   const handleAddComment = (e) => {
     e.preventDefault();
-    dispatch(addComment({ film, text }));
+    dispatch(addComment({ id, text }));
     setText("");
   };
 
@@ -32,8 +31,8 @@ const FilmBodyComment = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchComment());
-  }, [dispatch]);
+    dispatch(fetchComment(id));
+  }, [dispatch, id]);
 
   return (
     <div className={styles.comment_main}>
@@ -65,13 +64,12 @@ const FilmBodyComment = () => {
           </div>
         </div>
         <div>
-          {comments.map((comment) => {
-            return (
-              <div key={comment}>
-                <div className={styles.comment_text}>{comment.text}</div>
-              </div>
+        {comments.map((comment) => {
+    return (
+      <div key={comment._id}>
+        <div className={styles.comment_text}>{comment.text}</div>
+      </div>
             );
-//             return <div key={comment._id}>{comment.text}</div>;
           })}
         </div>
       </div>

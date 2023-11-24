@@ -11,6 +11,35 @@ import { fetchFilms } from "../../features/filmSlice";
 
 function FilmBody({ comment }) {
 
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
+
+  // Функция для получения текущих значений из localStorage
+  const getValuesFromLocalStorage = () => {
+    const localLikes = localStorage.getItem('likes') || 0;
+    const localDislikes = localStorage.getItem('dislikes') || 0;
+    setLikes(parseInt(localLikes, 10));
+    setDislikes(parseInt(localDislikes, 10));
+  };
+
+  // Функция для обновления localStorage и состояния
+  const updateValues = (newLikes, newDislikes) => {
+    localStorage.setItem('likes', newLikes);
+    localStorage.setItem('dislikes', newDislikes);
+    setLikes(newLikes);
+    setDislikes(newDislikes);
+  };
+
+  // Обработчик для лайка
+  const handleLike = () => {
+    updateValues(likes + 1, dislikes);
+  };
+
+  // Обработчик для дислайка
+  const handleDislike = () => {
+    updateValues(likes, dislikes + 1);
+  };
+
   const dispatch = useDispatch()
 
   const { id } = useParams();
@@ -21,6 +50,7 @@ console.log(selectedFilm)
   useEffect(() => {
     window.scroll(0,0)
     dispatch(fetchFilms());
+    getValuesFromLocalStorage()
   }, [dispatch]);
 
   if(!selectedFilm) {
@@ -59,13 +89,15 @@ console.log(selectedFilm)
             <YoutubePlayer video={selectedFilm?.url} />
           </div>
           <div className={styles.ocenka}>
-            <button className={styles.like}>
+            <button onClick={handleLike} className={styles.like}>
               <AiOutlineLike />
-              10
+              {likes}
             </button>
             <span className={styles.reiting}>{selectedFilm.grade} Оценка</span>
-            <button className={styles.dislike}>
-              <AiOutlineDislike />2
+            <button onClick={handleDislike} className={styles.dislike}>
+              <AiOutlineDislike />
+              
+              {dislikes}
             </button>
           </div>
           <div className={styles.filmComment}>

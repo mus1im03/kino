@@ -20,14 +20,14 @@ const initialState = {
 
 export const authSignUp = createAsyncThunk(
   "auth/signup",
-  async ({ login, password }, thunkAPI) => {
+  async ({ email, password }, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4050/auth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ login, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const json = await res.json()
@@ -45,14 +45,14 @@ export const authSignUp = createAsyncThunk(
 
 export const authSignIn = createAsyncThunk(
   "auth/signin",
-  async ({ login, password }, thunkAPI) => {
+  async ({ email, password }, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4050/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ login, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const token = await res.json()
@@ -127,8 +127,8 @@ const applicationSlice = createSlice({
       console.log(action.payload);
       state.singingIn = false
       state.error = null
-      state.token = action.payload.token
-      state.user = action.payload.user
+      state.token = action.payload
+      state.user = action.payload
     })
   },
 });

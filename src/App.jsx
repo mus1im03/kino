@@ -17,6 +17,10 @@ const App = () => {
       {/* Роуты тут */}
 
       <Routes>
+                <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/auth" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
+        
         <Route path="/" element={<MainContent />} />
         <Route path="/genre/:genreId" element={<MovieList />} />
         <Route exact path="/movies" element={<MovieList />} />

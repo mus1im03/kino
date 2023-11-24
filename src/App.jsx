@@ -25,7 +25,7 @@ const App = () => {
             element={<FilmBody/> }
           />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

@@ -1,3 +1,7 @@
+main {
+  border-bottom: 1px solid grey;
+}
+
 .perviyBlock {
   display: flex;
   justify-content: center;
@@ -8,8 +12,6 @@
   width: 50%;
   margin-left: 40px;
   color: white;
-  
-
 }
 
 .img {
@@ -76,15 +78,35 @@
 }
 
 .like {
-  border: 1px solid green;
   margin-right: 20px;
   font-size: 25px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  background-color: #423280;
+}
+
+.like:active {
+  background-color: #242131;
 }
 
 .dislike {
-  border: 1px solid red;
+  color: white;
+  background-color: #423280;
+  border: none;
   margin-left: 20px;
   font-size: 25px;
+}
+
+.dislike:active {
+  background-color: white;
 }
 
 .reiting {
@@ -97,4 +119,5 @@
 .filmComment{
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }

@@ -27,7 +27,7 @@ const Footer = () => {
                             <li>TV+</li>
                         </ul>
                         <div>
-                            <a href="">Активация сертификата+</a>
+                            <a className={styles.activacia}>Активация сертификата</a>
                         </div>
                     </div>
                     <div>

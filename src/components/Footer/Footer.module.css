@@ -1,52 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 110px;
 }
 
 .footer_content {
-    /* width: 90%; */
-    display: flex;
-    /* margin: 0 auto; */
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
 }
 
 .footer_colum {
-    margin-right: 50px;
+  margin-right: 70px;
 }
 
 ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 li {
-    list-style: none;
-    color: hsla(0,0%,100%,.48);
-    font-size: 15px;
-    margin-bottom: 10px;
+  list-style: none;
+  color: hsla(0, 0%, 100%, 0.48);
+  font-size: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+li:hover {
+    color: #fff;
 }
 
 .name_colum {
-    color: #fff;
+  color: #fff;
 }
 
 .support_text {
-    color: hsla(0,0%,100%,.48);
+  color: hsla(0, 0%, 100%, 0.48);
 }
 
 .footer_description {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    font-size: 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .message {
-    background-color: #1f1b2e;
-    border-color: #1f1b2e;
-    padding: 13px 30px 13px 30px;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    color: #fff;
+  background-color: #1f1b2e;
+  border-color: #1f1b2e;
+  padding: 13px 30px 13px 30px;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.message:hover {
+  background-color: #242131;
+}
+
+.activacia {
+  font-family: "Rubik One", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  /* background: linear-gradient(45deg, #0b2349 33%, #0d61bc 66%, #8aa9d6); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0b2349;
+  display: table;
+  margin: 20px auto;
+  background-image: linear-gradient(-45deg, #c447ff, #ea003d);
+  cursor: pointer;
 }

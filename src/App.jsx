@@ -5,14 +5,15 @@ import MainContent from "./components/MainContent/MainContent";
 import MovieList from "./components/Cards/MovieList";
 import { useSelector } from "react-redux";
 import FilmBody from '../src/components/Body_film_page/FilmBody'
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
 
   return (
-    <>
-      <div>
+    <div className="container">
+    
         <Header />
-      </div>
+      
       {/* Роуты тут */}
       
       <Routes>
@@ -24,7 +25,8 @@ const App = () => {
             element={<FilmBody/> }
           />
       </Routes>
-    </>
+      {/* <Footer /> */}
+    </div>
   );
 };
 

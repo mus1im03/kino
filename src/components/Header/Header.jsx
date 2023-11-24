@@ -104,6 +104,7 @@ const Header = () => {
                 >
                   {genre.title}
                 </Link>
+                
               );
             })}
           </div>

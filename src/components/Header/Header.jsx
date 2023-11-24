@@ -6,46 +6,57 @@ import logo from "../../assets/img/reposition_iviLogoPlateRounded.svg";
 import "./Header.css";
 import icon from "../../assets/img/icons8-человек-64.png";
 import { fetchGenres } from "../../features/genreSlice";
+import { fetchFilms } from "../../features/filmSlice";
 
 const Header = () => {
-
   const dispatch = useDispatch();
 
   const genres = useSelector((state) => state.genres.genres);
 
+  const films = useSelector((state) => state.films.films);
+  console.log(films);
   const [seeGenres, setSeeGenres] = useState(false);
 
   const handleGenres = () => {
     setSeeGenres(!seeGenres);
   };
 
+  const [value, setValue] = useState("");
+
+  const filtered = films.filter((item) => {
+    return item.name.toLowerCase().includes(value.toLowerCase());
+  });
   useEffect(() => {
-    dispatch(fetchGenres());
+    dispatch(fetchGenres(), fetchFilms());
   }, [dispatch]);
 
+
   const headerBlockStyle = {
-    backgroundColor: seeGenres ? '#242131' : 'transparent',
-    borderTopLeftRadius: seeGenres && '15px',
-    borderTopRightRadius: seeGenres && '15px',
+    backgroundColor: seeGenres ? "#242131" : "transparent",
+    borderTopLeftRadius: seeGenres && "15px",
+    borderTopRightRadius: seeGenres && "15px",
   };
 
   const headerBlockStyl = {
-    backgroundColor: seeGenres ? '#242131' : 'transparent',
-    borderBottomLeftRadius: seeGenres && '15px',
-    borderBottomRightRadius: seeGenres && '15px',
-    transition: seeGenres && 'backgroundColor 0.2s ease'
+    backgroundColor: seeGenres ? "#242131" : "transparent",
+    borderBottomLeftRadius: seeGenres && "15px",
+    borderBottomRightRadius: seeGenres && "15px",
+    transition: seeGenres && "backgroundColor 0.2s ease",
   };
 
   return (
     <header>
       <div className={styles.header_block} style={headerBlockStyle}>
-        <div className={styles.img_block} onMouseLeave={() => setSeeGenres(false)}>
+        <div
+          className={styles.img_block}
+          onMouseLeave={() => setSeeGenres(false)}
+        >
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
         </div>
         <ul className={styles.categories}>
-          <Link to='/' className="nav first">
+          <Link to="/" className="nav first">
             Главная
           </Link>
           <li className="nav genres" onMouseEnter={() => handleGenres()}>
@@ -62,7 +73,12 @@ const Header = () => {
           </li>
         </ul>
         <div className={styles.input_block}>
-          <input type="text" id="" placeholder="Введите название" />
+          <input
+            type="text"
+            id=""
+            placeholder="Введите название"
+            onChange={(e) => setValue(e.target.value)}
+          />
           <button className={styles.input_btn}></button>
         </div>
         <div className={styles.login_button}>
@@ -73,12 +89,32 @@ const Header = () => {
         </div>
       </div>
       {seeGenres && (
-        <div className={styles.film_category} style={headerBlockStyl} onMouseLeave={() => setSeeGenres(false)}><span>Жанры</span>
-          <div className={styles.genres_block}>{genres.map((genre) => {
-            return <Link to={`/genre/${genre._id}`} className={styles.genres_names}>{genre.title}</Link>;
-          })}</div>
+        <div
+          className={styles.film_category}
+          style={headerBlockStyl}
+          onMouseLeave={() => setSeeGenres(false)}
+        >
+          <span>Жанры</span>
+          <div className={styles.genres_block}>
+            {genres.map((genre) => {
+              return (
+                <Link
+                  to={`/genre/${genre._id}`}
+                  className={styles.genres_names}
+                >
+                  {genre.title}
+                </Link>
+                
+              );
+            })}
+          </div>
         </div>
       )}
+      <ul className={styles.item}>
+        {value&&filtered.map((movie) => (
+          <li><Link to='/' key={movie.id}>{movie.name}</Link></li>
+        ))}
+      </ul>
     </header>
   );
 };

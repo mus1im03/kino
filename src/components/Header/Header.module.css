@@ -149,3 +149,25 @@ header {
 .input_btn:hover {
   opacity: 1;
 }
+.input_block input{
+  position: relative;
+}
+
+.item{
+    background-color: brown;
+    width: 400px;
+    height: auto;
+    position: absolute;
+    z-index: 101;
+    right: 350px;
+    top: 50px;
+}
+.item li{
+  list-style: none;
+  text-decoration: none;
+}
+a{
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}

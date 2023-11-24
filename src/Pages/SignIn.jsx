@@ -12,6 +12,7 @@ const SignIn = () => {
 
   const handleSetName = (e) => {
     setEmail(e.target.value);
+    
   };
 
   const handleSetPass = (e) => {

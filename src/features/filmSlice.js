@@ -1,4 +1,4 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   films: [],
@@ -22,6 +22,8 @@ export const fetchFilms = createAsyncThunk(
     }
   }
 );
+
+
 
 const filmsSlice = createSlice({
   name: "films",

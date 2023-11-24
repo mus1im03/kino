@@ -2,7 +2,7 @@
 
 header {
   width: 1216px;
-  height: 72px;
+  /* height: 100px; */
   font-family: "League Gothic", sans-serif;
   margin: 0 auto;
   font-size: 15px;
@@ -15,7 +15,7 @@ header {
 }
 
 .img_block {
-  margin-right: -100px;
+  margin-right: -80px;
 }
 
 .img_block img {
@@ -28,6 +28,10 @@ header {
   display: flex;
 }
 
+.input_block {
+  position: relative;
+}
+
 .input_block input {
   cursor: pointer;
   margin-right: 10px;
@@ -36,10 +40,15 @@ header {
   line-height: 34px;
   padding: 0 40px 0 10px;
   border-radius: 9px;
-  background-color: #d9d7e0;
-  color: #1f1b2e;
+  background-color: #4d495a;
+  /* color: #1f1b2e; */
+  color: #fff;
   border: 0;
   outline: none;
+}
+
+.input_block input:hover {
+  background-color: #5f5b6c;
 }
 
 .login_button {
@@ -83,8 +92,10 @@ header {
 
 .film_category {
   width: 1169px;
-    min-height: 71px;
-    padding: 19px 0px 10px 47px;
+  min-height: 71px;
+  padding: 19px 0px 10px 47px;
+  position: absolute;
+  z-index: 10;
 }
 
 .film_category span {
@@ -93,15 +104,48 @@ header {
 
 .genres_block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  width: 600px;
   margin-top: 8px;
 }
 
 .genres_names {
+  margin-right: 15px;
   margin-top: 8px;
-  color: hsla(0,0%,100%,.48);
+  color: hsla(0, 0%, 100%, 0.48);
   font-size: 12px;
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.genres_names:hover {
+  color: #fff;
+  
+}
+
+.input_btn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  font-size: 0;
+  line-height: 1;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease 0s;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  background-image: url(data:image/svg+xml,%3Csvg%20width%3D%2248%22%20height%3D%2224%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M38.7%2013.5l-.2.3a6%206%200%2010-.6.6l-.6.4%204.7%204.5a1%201%200%20001.3-1.3l-4.6-4.5zM34%2014a4.1%204.1%200%20110-8.3%204.1%204.1%200%20010%208.3z%22%20fill%3D%22%23B6B6B6%22%2F%3E%3Cpath%20d%3D%22M14.7%2013.5l-.2.3a6%206%200%2010-.6.6l-.6.4%204.7%204.5a1%201%200%20001.3-1.3l-4.6-4.5zM10%2014a4.1%204.1%200%20110-8.3%204.1%204.1%200%20010%208.3z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E);
+}
+
+.input_btn:hover {
+  opacity: 1;
 }

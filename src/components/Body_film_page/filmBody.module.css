@@ -1,3 +1,7 @@
+main {
+  border-bottom: 1px solid grey;
+}
+
 .perviyBlock {
   display: flex;
   justify-content: center;
@@ -8,12 +12,17 @@
   width: 50%;
   margin-left: 40px;
   color: white;
-  
-
 }
 
 .img {
   margin-left: -155px;
+  width: 300px;
+  height: 444px;
+}
+
+.img img{
+  width: 300px;
+  height: 444px;
 }
 
 .vtoroyBlock {
@@ -24,7 +33,6 @@
 .params {
   margin-left: -142px;
   color: white;
-  
 }
 
 .params2 {
@@ -39,7 +47,6 @@
   top: 500px;
   font-size: 18px;
   color: white;
-  
 }
 
 .player {
@@ -64,20 +71,39 @@
   height: 80px;
   border-radius: 40px;
   border: 1px solid black;
-  font-size: 19px;
-  background-color: gray;
+  font-size: 12px;
+  background-color: #423280;
+  color: #fff;
 }
 
 .like {
-  border: 1px solid green;
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  color: white;
+  background-color: #423280;
+}
+
+.like:active {
+  background-color: #242131;
 }
 
 .dislike {
-  border: 1px solid red;
+  color: white;
+  background-color: #423280;
+  border: none;
   margin-left: 20px;
-  font-size: 25px;
+  font-size: 18px;
+}
+
+.dislike:active {
+  background-color: #242131;
 }
 
 .reiting {
@@ -87,7 +113,9 @@
   display: flex;
 }
 
-.filmComment{
+.filmComment {
   display: flex;
   justify-content: center;
+  margin-bottom: 100px;
 }
+

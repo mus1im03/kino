@@ -1,0 +1,88 @@
+.comment_components{
+    margin-bottom: 200px;
+    margin-top: 50px;
+}
+
+.comment_text div{
+    color: white;
+    margin-bottom: 10px
+}
+
+.comment_input{
+    min-width: 400px;
+}
+
+
+.commentBtn{
+    margin-top: 5px;
+    display: inline-block;
+    text-align: center;
+    padding: 0 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+    background: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.5;
+    border: 2px solid #3498db;
+}
+
+.comment_text{
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.blurtext{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+#input{
+    width: 275px;
+    height: 15vh;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.divBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.textarea{
+    width: 300px;
+}
+
+.form_comment form{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+    flex-direction: column
+}
+
+#input{ 
+    border: 0;
+    background: none;
+    text-align: left;
+    border: 2px solid #3498db;
+    padding: 5px 5px;
+    width: 285px;
+    height: 15vh;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.50s;
+}
+
+.blur{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}

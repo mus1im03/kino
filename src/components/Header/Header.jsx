@@ -2,10 +2,10 @@ import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import logo from "../assets/img/reposition_iviLogoPlateRounded.svg";
+import logo from "../../assets/img/reposition_iviLogoPlateRounded.svg";
 import "./Header.css";
-import icon from "../assets/img/icons8-человек-64.png";
-import { fetchGenres } from "../features/genreSlice";
+import icon from "../../assets/img/icons8-человек-64.png";
+import { fetchGenres } from "../../features/genreSlice";
 
 const Header = () => {
 
@@ -33,6 +33,7 @@ const Header = () => {
     backgroundColor: seeGenres ? '#242131' : 'transparent',
     borderBottomLeftRadius: seeGenres && '15px',
     borderBottomRightRadius: seeGenres && '15px',
+    transition: seeGenres && 'backgroundColor 0.2s ease'
   };
 
   return (
@@ -44,9 +45,9 @@ const Header = () => {
           </Link>
         </div>
         <ul className={styles.categories}>
-          <li href="" className="nav">
+          <Link to='/' className="nav first">
             Главная
-          </li>
+          </Link>
           <li className="nav genres" onMouseEnter={() => handleGenres()}>
             Жанры
           </li>
@@ -62,6 +63,7 @@ const Header = () => {
         </ul>
         <div className={styles.input_block}>
           <input type="text" id="" placeholder="Введите название" />
+          <button className={styles.input_btn}></button>
         </div>
         <div className={styles.login_button}>
           <button className={styles.login_button}>

@@ -8,8 +8,6 @@
   width: 50%;
   margin-left: 40px;
   color: white;
-  
-
 }
 
 .img {
@@ -24,7 +22,6 @@
 .params {
   margin-left: -142px;
   color: white;
-  
 }
 
 .params2 {
@@ -39,7 +36,6 @@
   top: 500px;
   font-size: 18px;
   color: white;
-  
 }
 
 .player {
@@ -87,7 +83,7 @@
   display: flex;
 }
 
-.filmComment{
+.filmComment {
   display: flex;
   justify-content: center;
 }

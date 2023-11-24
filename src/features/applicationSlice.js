@@ -73,6 +73,30 @@ export const authSignIn = createAsyncThunk(
   }
 );
 
+export const InFavorite = createAsyncThunk(
+  "auth/signin",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4050/favorite/${id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+
+      const favorite = await res.json()
+
+      if(favorite.error) {
+        return thunkAPI.rejectWithValue(favorite.error)
+      }
+
+      return { favorite }
+    } catch (error) {
+        thunkAPI.rejectWithValue(error)
+    }
+  }
+);
+
 const applicationSlice = createSlice({
   name: "application",
   initialState,

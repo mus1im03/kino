@@ -8,6 +8,10 @@ header {
   font-size: 15px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header_block {
   display: flex;
   justify-content: space-around;
@@ -49,6 +53,20 @@ header {
 
 .input_block input:hover {
   background-color: #5f5b6c;
+}
+
+.login_button .profil_button {
+  border: none;
+  background-color: #1f1b2e;
+  display: flex;
+  width: 98px;
+  height: 40px;
+  border-radius: 8px;
+  border-width: 1px;
+  height: 40px;
+  padding: 9px 15px;
+  align-items: center;
+  transition: background-color 0.2s ease;
 }
 
 .login_button {
@@ -123,7 +141,6 @@ header {
 
 .genres_names:hover {
   color: #fff;
-  
 }
 
 .input_btn {
@@ -149,25 +166,28 @@ header {
 .input_btn:hover {
   opacity: 1;
 }
-.input_block input{
+.input_block input {
   position: relative;
 }
 
-.item{
-    background-color: brown;
-    width: 400px;
-    height: auto;
-    position: absolute;
-    z-index: 101;
-    right: 350px;
-    top: 50px;
+.item {
+  background-color: #28233a;
+  width: 400px;
+  position: absolute;
+  height: auto;
+  z-index: 101;
+  right: 350px;
+  top: 50px;
+  border-radius: 10px;
+  text-indent: 20px;
 }
-.item li{
-  list-style: none;
+
+.item a {
   text-decoration: none;
 }
-a{
+
+.item_li {
+  margin-top: 10px;
   list-style: none;
   text-decoration: none;
-  color: black;
 }

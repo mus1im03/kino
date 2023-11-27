@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authSignIn } from "../features/applicationSlice";
 import { Link } from "react-router-dom";
-import "../Pages/styless.module.css"; 
+import styles from "../Pages/SignIn.module.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -10,9 +10,10 @@ const SignIn = () => {
   const token = useSelector((state) => state.application.token);
   const dispatch = useDispatch();
 
+  const [redirectToMain, setRedirectToMain] = useState(false);
+
   const handleSetName = (e) => {
     setEmail(e.target.value);
-    
   };
 
   const handleSetPass = (e) => {
@@ -26,33 +27,43 @@ const SignIn = () => {
     console.log(email, password);
   };
 
+  useEffect(() => {
+    if (token) {
+      setRedirectToMain(true);
+    }
+  }, [token]);
+
   return (
-    <form className="form" onSubmit={handleSignIn}>
-      <input
-        className="form-input"
-        type="text"
-        value={email}
-        placeholder="email"
-        onChange={handleSetName}
-      />
-      <br />
-      <input
-        className="form-input"
-        type="password"
-        value={password}
-        placeholder="password"
-        onChange={handleSetPass}
-      />
-      <br />
-      <button className="btn" type="submit">
-        Войти
-      </button>
-      <p className="registration-link">
-        <Link to="/auth">
-          <b>Зарегистрируйтесь</b>
-        </Link>
-      </p>
-    </form>
+    <div>
+      {redirectToMain && <Link to="/" />} {/* Redirect conditionally */}
+      <form className={styles.form} onSubmit={handleSignIn}>
+        <span className={styles.login_text}>Login</span>
+        <input
+          className={styles.form_input}
+          type="text"
+          value={email}
+          placeholder="Email"
+          onChange={handleSetName}
+        />
+        <br />
+        <input
+          className={styles.form_input}
+          type="password"
+          value={password}
+          placeholder="Password"
+          onChange={handleSetPass}
+        />
+        <br />
+        {token && <Link to='/'><button className={styles.btn} type="submit">
+          Войти
+        </button></Link>}
+        <p className={styles.registration_link}>
+          <Link to="/auth">
+            <b>Зарегистрируйтесь</b>
+          </Link>
+        </p>
+      </form>
+    </div>
   );
 };
 

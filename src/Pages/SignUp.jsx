@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { authSignUp } from "../features/applicationSlice";
 import { Link } from "react-router-dom";
-import "../Pages/styles.module.css"; 
+import styles from "../Pages/SignUp.module.css"; 
 
 
 const SignUp = () => {
@@ -65,10 +65,11 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={handle} className="form">
+    <form onSubmit={handle} className={styles.form}>
       {(emailDirty && emailError) && (
-        <div className="error-message">{emailError}</div>
+        <div className={styles.error_message}>{emailError}</div>
       )}
+      <span className={styles.auth_text}>Auth</span>
       <input
         onChange={(e) => emailHandler(e)}
         value={email}
@@ -79,7 +80,7 @@ const SignUp = () => {
       />
       <br />
       {(passwordDirty && passwordError) && (
-        <div className="error-message">{passwordError}</div>
+        <div className={styles.error_message}>{passwordError}</div>
       )}
       <input
         onChange={(e) => passwordHandler(e)}

@@ -7,7 +7,7 @@ import MainBanner from "../MainBanner/MainBanner";
 const MainContent = () => {
   return (
     <div className={styles.container}>
-      {/* <MainBanner /> */}
+      <MainBanner />
       <MovieList />
     </div>
   );

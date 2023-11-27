@@ -6,9 +6,9 @@ const initialState = {
 
 export const fetchComment = createAsyncThunk(
   "fetch/comment",
-  async (id, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:4050/comments/${id}`, {
+      const res = await fetch(`http://localhost:4050/comments`, {
         method: "GET",
       });
       const comment = await res.json();
@@ -21,14 +21,16 @@ export const fetchComment = createAsyncThunk(
 
 export const addComment = createAsyncThunk(
   "addComment/comment",
-  async ({id, text}, thunkAPI) => {
+  async ({ film, text }, thunkAPI) => {
+    console.log(text, film);
     try {
-      const res = await fetch(`http://localhost:4050/comments/${id}`, {
+      const res = await fetch(`http://localhost:4050/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`
         },
-        body: JSON.stringify({ text }),
+        body: JSON.stringify({ text, film }),
       });
 
       if (!res.ok) {

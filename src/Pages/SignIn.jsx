@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authSignIn } from "../features/applicationSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../Pages/SignIn.module.css";
 
 const SignIn = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const token = useSelector((state) => state.application.token);
   const dispatch = useDispatch();
 
   const [redirectToMain, setRedirectToMain] = useState(false);
+
+  const signIn = useSelector((state) => state.application.singingIn)
 
   const handleSetName = (e) => {
     setEmail(e.target.value);
@@ -33,6 +36,12 @@ const SignIn = () => {
     }
   }, [token]);
 
+  useEffect(() => {
+    if(signIn === true) {
+      navigate('/')
+    }
+  }, [signIn]);
+
   return (
     <div>
       {redirectToMain && <Link to="/" />} {/* Redirect conditionally */}
@@ -54,9 +63,9 @@ const SignIn = () => {
           onChange={handleSetPass}
         />
         <br />
-        {token && <Link to='/'><button className={styles.btn} type="submit">
+         <button className={styles.btn} type="submit">
           Войти
-        </button></Link>}
+        </button>
         <p className={styles.registration_link}>
           <Link to="/auth">
             <b>Зарегистрируйтесь</b>

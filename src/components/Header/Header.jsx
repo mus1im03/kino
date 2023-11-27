@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import logo from "../../assets/img/reposition_iviLogoPlateRounded.svg";
+import logo from "../../assets/img/png-transparent-cinema-film-logo-twist.png";
 import "./Header.css";
 import icon from "../../assets/img/icons8-человек-64.png";
 import { fetchGenres } from "../../features/genreSlice";

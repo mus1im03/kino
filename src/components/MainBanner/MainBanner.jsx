@@ -12,7 +12,7 @@ const MainBanner = () => {
   const flickityOptions = {
     initialIndex: 2,
     wrapAround: true,
-    autoPlay: 1000,
+    autoPlay: 3000,
   };
 
   const films = {

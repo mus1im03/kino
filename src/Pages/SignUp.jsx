@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authSignUp } from "../features/applicationSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../Pages/SignUp.module.css"; 
 
 
@@ -13,19 +13,25 @@ const SignUp = () => {
   const [emailError, setEmailError] = useState("Емайл не может быть пустым");
   const [passwordError, setPasswordError] = useState("Пароль не может быть пустым");
   const [formValid, setFormValid] = useState(false);
-    const  dispatch = useDispatch()
+  const  dispatch = useDispatch()
+  const signUp = useSelector((state) => state.application.singingUp)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
+
     if (emailError || passwordError) {
       setFormValid(false);
     } else {
       setFormValid(true);
     }
   }, [emailError, passwordError]);
+
   const handle = (e)=>{
     e.preventDefault()
     dispatch(authSignUp({ email, password}))
   }
+
   const emailHandler = (e) => {
     setEmail(e.target.value);
 
@@ -63,6 +69,12 @@ const SignUp = () => {
         break;
     }
   };
+
+  useEffect(() => {
+    if(signUp === true) {
+      navigate('/login')
+    }
+  }, [signUp]);
 
   return (
     <form onSubmit={handle} className={styles.form}>

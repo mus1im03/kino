@@ -120,7 +120,7 @@ const applicationSlice = createSlice({
       state.error = action.payload
     })
     .addCase(authSignUp.fulfilled, (state, action) => {
-      state.singingUp = false
+      state.singingUp = true
       state.error = null
     })
     .addCase(authSignIn.pending, (state) => {
@@ -133,12 +133,13 @@ const applicationSlice = createSlice({
     })
     .addCase(authSignIn.fulfilled, (state, action) => {
       console.log(action.payload);
-      state.singingIn = false
+      state.singingIn = true
       state.error = null
       state.token = action.payload
       state.user = action.payload
     })
     .addCase(logOut.fulfilled, (state, action) => {
+      state.singingIn = false
       state.token = null
       state.user = null
     })

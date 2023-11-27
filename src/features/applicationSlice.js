@@ -97,10 +97,18 @@ export const InFavorite = createAsyncThunk(
   }
 );
 
+export const logOut = createAsyncThunk("logOut", async (_, thunkAPI) => {
+  return localStorage.clear();
+});
+
 const applicationSlice = createSlice({
   name: "application",
   initialState,
-  reducers: {},
+  reducers: {
+    clearToken: (state) => {
+      state.token = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
     .addCase(authSignUp.pending, (state) => {
@@ -129,6 +137,10 @@ const applicationSlice = createSlice({
       state.error = null
       state.token = action.payload
       state.user = action.payload
+    })
+    .addCase(logOut.fulfilled, (state, action) => {
+      state.token = null
+      state.user = null
     })
   },
 });

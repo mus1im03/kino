@@ -6,33 +6,39 @@ import styles from "./Comment.module.css";
 import { useParams } from "react-router-dom";
 
 const FilmBodyComment = ({ id }) => {
+
   const [text, setText] = useState("");
+
   const [blur, setBlur] = useState(false);
-  const comments = useSelector((state) => state.comment.comment.filter(comment => comment.filmId === id));
-  
+
+  const comments = useSelector((state) =>
+    state.comment.comment.filter((comment) => comment.film === id)
+  );
+
   const dispatch = useDispatch();
 
-  const handleAddComment = (e) => {
-    e.preventDefault();
-    dispatch(addComment({ id, text }));
-    setText("");
-  };
-
+  
   const handleChangeText = (e) => {
     setText(e.target.value);
   };
-
+  
   const handleBlur = () => {
     text === "" && setBlur(true);
   };
-
+  
   const blurFokus = () => {
     blur && setBlur(false);
   };
+  
+  const handleAddComment = (e) => {
+    e.preventDefault();
+    dispatch(addComment({ film: id, text }));
+    setText("");
+  };
 
   useEffect(() => {
-    dispatch(fetchComment(id));
-  }, [dispatch, id]);
+    dispatch(fetchComment());
+  }, [dispatch]);
 
   return (
     <div className={styles.comment_main}>
@@ -64,11 +70,11 @@ const FilmBodyComment = ({ id }) => {
           </div>
         </div>
         <div>
-        {comments.map((comment) => {
-    return (
-      <div key={comment._id}>
-        <div className={styles.comment_text}>{comment.text}</div>
-      </div>
+          {comments.map((comment) => {
+            return (
+              <div key={comment._id}>
+                <div className={styles.comment_text}>{comment.text}</div>
+              </div>
             );
           })}
         </div>

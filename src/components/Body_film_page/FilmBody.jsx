@@ -46,7 +46,6 @@ function FilmBody({ comment }) {
 
   const selectedFilm = useSelector((state) => state.films.films.find((film) => film._id === id));
 
-console.log(selectedFilm)
   useEffect(() => {
     window.scroll(0,0)
     dispatch(fetchFilms());
